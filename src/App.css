@@ -1,0 +1,28 @@
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #000000; 
+  }
+
+ header {
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+ }
+
+ .product {
+    display: flex; 
+    gap: 10px;
+ }
+
+ .quantity {
+    display: flex; 
+    align-items: center; 
+    gap: 5px;
+ }
+
+ th, td {
+    border: 1px solid #000000; 
+    padding: 5px; 
+  }
