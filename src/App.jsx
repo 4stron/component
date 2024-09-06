@@ -4,12 +4,19 @@ function App() {
 
   const [counter, setCounter] = useState(0);
 
+  checkIfZero();
+
   function increment() {
     setCounter(counter + 1)
   }
 
   function reduction() {
     setCounter(counter - 1)
+  }
+
+  function checkIfZero(){
+    if(counter < 0)
+      setCounter(counter == 0)
   }
 
   return (
