@@ -34,6 +34,7 @@ function App() {
     return productPrices[productName];
   }
 
+
   return (
     <div>
       <header>
@@ -51,7 +52,7 @@ function App() {
       </div>
       <div className="quantity">
         <p>Quantity:</p>
-        <button onClick={decrement}>-</button>
+        <button disabled={counter === 0} onClick={decrement}>-</button>
         <p>{counter}</p>
         <button onClick={increment}>+</button>
       </div>
