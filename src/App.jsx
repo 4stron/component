@@ -8,6 +8,16 @@ function App() {
     setCounter(counter + 1);
   }
 
+  function incrementfive() {
+    setCounter(counter + 5);
+  }
+
+  function decrementfive() {
+    if (counter > 4) {
+      setCounter(counter - 5);
+    }
+  }
+
   function decrement() {
     if (counter > 0) {
       setCounter(counter - 1);
@@ -61,12 +71,18 @@ function App() {
       </div>
       <div className="quantity">
         <p>Quantity:</p>
+        <button disabled={isDisabled || counter === 0} onClick={decrementfive}>
+          -5
+        </button>
         <button disabled={isDisabled || counter === 0} onClick={decrement}>
           -
         </button>
         <p>{counter}</p>
         <button disabled={isDisabled} onClick={increment}>
           +
+        </button>
+        <button disabled={isDisabled} onClick={incrementfive}>
+          +5
         </button>
         <button onClick={resetCounter}>Reset</button>
       </div>
