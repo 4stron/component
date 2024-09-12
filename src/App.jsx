@@ -15,7 +15,11 @@ function App() {
   }
 
   function handleProductChange(event) {
-    setSelectedProduct(event.target.value);
+    const newProduct = event.target.value;
+    if (newProduct !== selectedProduct) {
+      setCounter(0);
+    }
+    setSelectedProduct(newProduct);
   }
 
   function calculateTotal() {
