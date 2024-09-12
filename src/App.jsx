@@ -38,7 +38,7 @@ function App() {
   return (
     <div>
       <header>
-        <img src="duck.jpg" alt="My Image" />
+        <img src="duck.jpg" alt="picture of a rubber duck" />
         <h1>Welcome to the product page!</h1>
       </header>
       <h3>Select product</h3>
