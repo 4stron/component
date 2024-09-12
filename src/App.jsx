@@ -34,6 +34,7 @@ function App() {
     return productPrices[productName];
   }
 
+  const isDisabled = !selectedProduct;
 
   return (
     <div>
@@ -52,9 +53,13 @@ function App() {
       </div>
       <div className="quantity">
         <p>Quantity:</p>
-        <button disabled={counter === 0} onClick={decrement}>-</button>
+        <button disabled={isDisabled || counter === 0} onClick={decrement}>
+          -
+        </button>
         <p>{counter}</p>
-        <button onClick={increment}>+</button>
+        <button disabled={isDisabled} onClick={increment}>
+          +
+        </button>
       </div>
       <h2>Order Info</h2>
       <table>
