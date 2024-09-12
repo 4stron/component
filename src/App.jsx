@@ -45,7 +45,7 @@ function App() {
   const isDisabled = !selectedProduct;
 
   return (
-    <div>
+    <div className="main">
       <header>
         <img src="duck.jpg" alt="picture of a rubber duck" />
         <h1>Welcome to the product page!</h1>
