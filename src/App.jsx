@@ -22,6 +22,10 @@ function App() {
     setSelectedProduct(newProduct);
   }
 
+  function resetCounter() {
+    setCounter(0);
+  }
+
   function calculateTotal() {
     const productPrice = getProductPrice(selectedProduct);
     if (productPrice) {
@@ -64,6 +68,7 @@ function App() {
         <button disabled={isDisabled} onClick={increment}>
           +
         </button>
+        <button onClick={resetCounter}>Reset</button>
       </div>
       <h2>Order Info</h2>
       <table>
