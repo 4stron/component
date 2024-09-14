@@ -3,6 +3,17 @@ import { useState } from "react";
 function App() {
   const [counter, setCounter] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+    if (!checked) {
+      alert("The product quantity will now be reset if the product is changed.")
+    }
+    else {
+      alert("The product quantity wont be reset now if the product is changed.")
+    }
+  };
 
   function increment() {
     setCounter(counter + 1);
@@ -26,8 +37,8 @@ function App() {
 
   function handleProductChange(event) {
     const newProduct = event.target.value;
-    if (newProduct !== selectedProduct) {
-      setCounter(0);
+    if (newProduct !== selectedProduct && checked) {    
+        setCounter(0);  
     }
     setSelectedProduct(newProduct);
   }
@@ -67,7 +78,13 @@ function App() {
           <option value="">Select a product</option>
           <option value="AMD Ryzen 5 3600">AMD Ryzen 5 3600 (245€)</option>
           <option value="intel i5 9600k">intel i5 9600k (199€)</option>
+          
         </select>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={handleChange}
+        />
       </div>
       <div className="quantity">
         <p>Quantity:</p>
