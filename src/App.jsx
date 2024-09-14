@@ -71,7 +71,7 @@ function App() {
       </div>
       <div className="quantity">
         <p>Quantity:</p>
-        <button disabled={isDisabled || counter === 0} onClick={decrementfive}>
+        <button disabled={isDisabled || counter < 5} onClick={decrementfive}>
           -5
         </button>
         <button disabled={isDisabled || counter === 0} onClick={decrement}>
