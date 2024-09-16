@@ -7,12 +7,10 @@ function App() {
 
   const handleChange = () => {
     setChecked(!checked);
-    if (!checked) {
+    !checked ?
       alert("The product quantity will now be reset if the product is changed.")
-    }
-    else {
+    : 
       alert("The product quantity wont be reset now if the product is changed.")
-    }
   };
 
   function increment() {
