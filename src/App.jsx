@@ -36,6 +36,10 @@ function App() {
     if (counter > 4) {
       setCounter(counter - 5);
     }
+    else {
+      setCounter(0)
+    }
+
   }
 
   //Sets new product if changed and resets quantity to 0 if checkbox is checked.
@@ -80,21 +84,18 @@ function App() {
       </header>
       <h3>Select product</h3>
       <div className="product">
-        <label htmlFor="product">Product:</label>
+        <label>Product:</label>
         <select id="product" onChange={handleProductChange}>
           <option value="">Select a product</option>
           <option value="AMD Ryzen 5 3600">AMD Ryzen 5 3600 (245€)</option>
           <option value="intel i5 9600k">intel i5 9600k (199€)</option>          
         </select>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={handleChange}
+        <input type="checkbox" checked={checked} onChange={handleChange}
         />
       </div>
       <div className="quantity">
         <p>Quantity:</p>
-        <button disabled={isDisabled || counter < 5} onClick={decrementfive}>
+        <button disabled={isDisabled || counter === 0} onClick={decrementfive}>
           -5
         </button>
         <button disabled={isDisabled || counter === 0} onClick={decrement}>
@@ -120,9 +121,9 @@ function App() {
         </thead>
         <tbody>
           <tr>
-            <td id="product-name">{selectedProduct}</td>
-            <td id="product-quantity">{counter}</td>
-            <td id="product-total">{calculateTotal()}€</td>
+            <td>{selectedProduct}</td>
+            <td>{counter}</td>
+            <td>{calculateTotal()}€</td>
           </tr>
         </tbody>
       </table>
